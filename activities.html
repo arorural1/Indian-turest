@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activities - Indian Turest</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      position: relative;
+      min-height: 100vh;
+    }
+    /* Background video */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    /* Dark overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+    /* Navbar */
+    nav {
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    nav ul li a:hover { color: #ffcc00; }
+    
+    .activities {
+      padding: 60px 30px;
+      text-align: center;
+    }
+    .activities h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ffcc00;
+      text-shadow: 2px 2px 8px black;
+    }
+    /* Cards Grid */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: scale(1.05); }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h2 {
+      margin: 10px;
+      color: #ffcc00;
+    }
+    .card p {
+      margin: 0 10px 15px;
+      font-size: 14px;
+      color: #f1f1f1;
+    }
+    footer {
+      background: rgba(0,0,0,0.7);
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    footer span { color: #ffcc00; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <!-- Background Video (Adventure feel) -->
+  <video autoplay muted loop id="bg-video">
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">INDIAN TUREST</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="activities.html">Activities</a></li>
+      <li><a href="cruises.html">Cruises</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="activities">
+    <h1>Popular Activities in India</h1>
+    <div class="cards">
+
+      <!-- Trekking -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?auto=format&fit=crop&w=800&q=60" alt="Trekking">
+        <h2>Trekking in Himalayas</h2>
+        <p>Adventure trekking routes in Himachal, Ladakh & Uttarakhand with breathtaking mountain views.</p>
+      </div>
+
+      <!-- Kerala Houseboat -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="Houseboat Kerala">
+        <h2>Houseboat in Kerala</h2>
+        <p>Enjoy calm backwaters of Kerala aboard traditional houseboats with natural lush landscapes.</p>
+      </div>
+
+      <!-- Goa Water Sports -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-1c3c2b8aa0f4?auto=format&fit=crop&w=800&q=60" alt="Goa Sports">
+        <h2>Water Sports in Goa</h2>
+        <p>Thrilling water sports such as parasailing, jet skiing, scuba diving on Goa’s golden beaches.</p>
+      </div>
+
+      <!-- Wildlife Safari -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1598618460286-9d72549c49dc?auto=format&fit=crop&w=800&q=60" alt="Safari">
+        <h2>Wildlife Safari</h2>
+        <p>Experience thrilling wildlife safaris in Ranthambore, Jim Corbett and Kaziranga National Park.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2024 <span>Indian Turest</span> | Owned by <span>Kaju Roop / K.I</span>
+  </footer>
+</body>
+</html>
