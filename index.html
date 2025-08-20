@@ -6,13 +6,18 @@
   <title>Indian Turest - Explore India</title>
   <style>
   body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    }
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  min-height: 100%;    /* content जितना होगा उतनी height लेगा */
+  overflow-x: hidden;  /* horizontal scroll हटेगा */
+  overflow-y: auto;    /* vertical रहना चाहिए */
+}
+* {
+  box-sizing: border-box;
+  max-width: 100%;     /* कोई भी element screen बाहर न निकले */
+}
+
 
     /* Hero Section with Background Slider */
     .hero {
