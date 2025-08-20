@@ -78,3 +78,18 @@ footer a:hover{text-decoration:underline;}
   .search-bar{flex-direction:column;}
   .gallery-row{flex-direction:column;align-items:center;}
 }
+/* Common page spacing so content is not cut */
+.about-page,
+.contact-page {
+  padding: 120px 60px 60px; /* 120px top for fixed navbar */
+  max-width: 800px;
+  margin: auto;
+}
+
+.about-page h1, .contact-page h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.contact-page form {
+  display: flex; flex-direction: column; gap: 15px;
+}
