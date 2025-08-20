@@ -53,6 +53,20 @@ body {
   color: #fff; /* span me likha hua white dikhao */
 }
 
+/* Navigation links */
+nav ul {
+  list-style: none;  /* bullet points hataye */
+  display: flex;     /* links ko row me dikhaye */
+  gap: 20px;         /* distance between links */
+}
+
+nav ul li a {
+  text-decoration: none; /* underline remove */
+  color: white;          /* link ka color by default white */
+  font-size: 16px;
+  transition: color 0.3s; /* hover effect smooth */
+}
+
 /* ============== PAGE HEADER (top banner) =============== */
 .page-header {
   padding: 80px 20px;   /* andar ka gap (top,bottom,left,right) */
