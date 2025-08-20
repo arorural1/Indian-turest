@@ -1,9 +1,10 @@
 /* ===== Browser ke default margin/padding hatao ===== */
 body, ul {
-  margin: 0;   /* outer spacing remove */
-  padding: 0;  /* inner spacing remove */
-  overflow-x: hidden;  /* Horizontal (left-right) scroll hata diya */
-}
+  margin: 0;                 /* extra space hatao */
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;        /* Left/Right scroll bilkul bandh */
+  width: 100%;}
 
 body {
   font-family: Arial, sans-serif;   /* pura site ka font Arial */
