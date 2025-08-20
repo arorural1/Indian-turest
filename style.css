@@ -3,19 +3,101 @@
 body {background:#111;color:#fff;line-height:1.6;}
 a{text-decoration:none;color:white;}
 
-/* Navbar */
+/* Navbar Base */
 nav {
-  background:rgba(0,0,0,0.9);
-  padding:15px 40px;
-  display:flex;justify-content:space-between;align-items:center;
-  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  background: rgba(0,0,0,0.9);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
-nav .logo{font-size:24px;font-weight:bold;color:#ffcc00;}
-nav ul{list-style:none;display:flex;}
-nav ul li{margin-left:20px;}
-nav ul li a{font-weight:600;transition:.3s;}
-nav ul li a:hover{color:#ffcc00;}
-body{padding-top:80px;}
+
+nav .logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  transition: 0.4s ease-in-out;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+/* Hover & Active */
+nav ul li a:hover {
+  background: #ffcc00;
+  color: #000;
+}
+nav ul li a.active {
+  background: #ffcc00;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Hamburger Menu (Hidden Default) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    width: 200px;
+    text-align: left;
+    padding: 20px;
+    height: 100vh;
+  }
+
+  nav ul.show {
+    right: 0;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
 
 /* Hero Section */
 .hero{
