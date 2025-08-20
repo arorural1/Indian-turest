@@ -38,8 +38,8 @@ nav ul {
 }
 
 nav ul li a {
-  text-decoration: none; /* Underline hatana */
-  color: white;          /* Link ka color white */
+  text-decoration: underline; /* Underline hatana */
+  color: blue;          /* Link ka color white */
   font-size: 16px;       /* Text size */
   transition: color 0.3s; /* Hover effect smooth */
 }
