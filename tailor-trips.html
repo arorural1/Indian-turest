@@ -6,20 +6,23 @@
   <title>Tailor Trips - Indian Turest</title>
   <style>
     * {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body {color:white;}
+    body {color:white; background:#f5f5f5;}
 
-     /* Navbar */
-    nav{background:rgba(0,0,0,0.9);padding:15px 40px;
+    /* Navbar */
+    nav{
+      background:rgba(0,0,0,0.9);
+      padding:15px 40px;
       display:flex;justify-content:space-between;align-items:center;
-      position:fixed;top:0;left:0;width:100%;z-index:1000;}
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+    }
     nav .logo{font-size:24px;font-weight:bold;color:#ffcc00;}
     nav ul{list-style:none;display:flex;}
     nav ul li{margin-left:20px;}
     nav ul li a{text-decoration:none;color:white;font-weight:600;transition:.3s;}
     nav ul li a:hover{color:#ffcc00;}
-    body{padding-top:80px;background:#f5f5f5;color:#222;}
+    body{padding-top:80px;}
     
-    /* Background */
+    /* Hero */
     .hero {
       position: relative;
       height: 100vh;
@@ -58,16 +61,18 @@
       font-size:18px;
       margin-bottom:25px;
       animation: fadeInUp 1.5s ease;
+      color:#fff;
     }
 
     /* Form */
     form {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.12);
       backdrop-filter: blur(10px);
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 4px 30px rgba(0,0,0,0.6);
       text-align: left;
+      color:#fff;
     }
     label {font-weight:bold;color:#ffcc00;}
     select, input, textarea {
@@ -110,9 +115,19 @@
     
     @keyframes fadeInDown {0%{opacity:0;transform:translateY(-30px);}100%{opacity:1;transform:translateY(0);}}
     @keyframes fadeInUp {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+
+    /* Footer */
+    footer {
+      background:#111;
+      color:#ccc;
+      text-align:center;
+      padding:20px;
+    }
+    footer span {color:#ffcc00;font-weight:bold;}
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <nav>
     <div class="logo">INDIAN TUREST</div>
     <ul>
@@ -125,6 +140,7 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
+
   <!-- Hero -->
   <div class="hero">
     <video autoplay muted loop>
@@ -170,9 +186,11 @@
         <label for="budget">Average Budget (₹)</label>
         <input type="text" id="budget" placeholder="Ex: 50,000">
 
+        <label for="message">Special Requests</label>
+        <textarea id="message" rows="4" placeholder="Anything special you want us to include..."></textarea>
+
         <button type="submit">Submit Request</button>
       </form>
-
     </div>
   </div>
 
@@ -184,11 +202,11 @@
     </div>
     <div class="step">
       <h2>2</h2>
-      <p>Choose Activities</p>
+      <p>Pick Activities</p>
     </div>
     <div class="step">
       <h2>3</h2>
-      <p>Customize Package</p>
+      <p>Customize Your Plan</p>
     </div>
     <div class="step">
       <h2>4</h2>
@@ -196,5 +214,9 @@
     </div>
   </section>
 
+  <!-- Footer -->
+  <footer>
+    © 2024 <span>Indian Turest</span> | Owned by <span>Kaju Roop / K.I</span>
+  </footer>
 </body>
 </html>
