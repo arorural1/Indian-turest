@@ -1,90 +1,93 @@
-/* ===== Reset ===== */
+/* ===== Browser ke default margin/padding hatao ===== */
 body, ul {
-  margin: 0;
-  padding: 0;
+  margin: 0;   /* outer spacing remove */
+  padding: 0;  /* inner spacing remove */
 }
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;   /* pura site ka font Arial */
+  background-color: #f4f4f4;        /* light grey background */
 }
 
-/* ===== Navbar ===== */
+/* ===== Navbar (Top bar) ===== */
 nav {
-  width: 100%;
-  background-color: #000;          /* Black background */
-  display: flex;
-  justify-content: space-between;  /* Logo left, menu right */
-  align-items: center;
-  padding: 15px 40px;
-  position: fixed;                 /* Fix navbar top */
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  width: 100%;                       /* full width bar */
+  background-color: #000;             /* black background */
+  display: flex;                      /* flexbox row layout */
+  justify-content: space-between;     /* logo left, menu right */
+  align-items: center;                /* vertical center align */
+  padding: 15px 40px;                 /* andar spacing */
+  position: fixed;                    /* upar fixed (scroll par upar rahega) */
+  top: 0;                             /* screen ke bilkul top par */
+  left: 0;                            /* screen ke left se start */
+  z-index: 1000;                      /* sabke upar dikhe */
 }
 
-/* Logo */
+/* ===== Logo ===== */
 .logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #FFD700;       /* Golden */
-  letter-spacing: 1px;
+  font-size: 22px;        /* text size bara */
+  font-weight: bold;      /* bold text */
+  color: #FFD700;         /* golden color */
+  letter-spacing: 1px;    /* letters ke beech thoda gap */
 }
 .logo span {
-  color: #fff;
+  color: #fff;            /* logo ke andar span ka color white */
 }
 
-/* ===== Menu Links ===== */
+/* ===== Menu (Link list) ===== */
 nav ul {
-  list-style: none;
-  display: flex;       /* Links ek row me */
-  gap: 30px;           /* Gap between links */
+  list-style: none;        /* list bullets (•) remove karo */
+  display: flex;           /* links ek line (row) me dikhe */
+  gap: 30px;               /* links ke beech ka gap = 30px */
 }
 
 nav ul li a {
-  position: relative;              /* underline ke liye */
-  text-decoration: none;           
-  color: white;
-  font-size: 16px;
-  padding: 6px 0;
-  transition: color 0.3s;
+  position: relative;       /* underline effect ke liye zaroori */
+  text-decoration: none;    /* default underline hatayo */
+  color: white;             /* text by default white */
+  font-size: 16px;          /* size set */
+  padding: 6px 0;           /* clickable area bada kar diya */
+  transition: color 0.3s;   /* hover transition smooth */
 }
 
-/* Hover underline (golden) */
+/* ===== Hover underline (Golden) ===== */
 nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;                   /* thoda neeche line */
-  width: 0%;                      /* hidden by default */
-  height: 2px;                    
-  background-color: #FFD700;      /* golden line */
-  transition: width 0.3s ease;
+  content: "";                     /* pseudo-element create */
+  position: absolute;              /* link ke niche set hoga */
+  left: 0;                         /* line left se start kare */
+  bottom: -3px;                    /* text ke niche 3px distance */
+  width: 0%;                       /* default me invisible */
+  height: 2px;                     /* line ki thickness */
+  background-color: #FFD700;       /* line ka color golden */
+  transition: width 0.3s ease;     /* animation smooth */
 }
 nav ul li a:hover::after {
-  width: 100%;                    /* hover par underline spread */
+  width: 100%;                     /* hover pe underline full stretch */
 }
 
-/* ===== Active link (always underline in BLUE) ===== */
+/* ===== Active Page Link (Blue Underline + Text) ===== */
 nav ul li a.active::after {
-  width: 100%;                    /* line always visible */
-  background-color: #2196F3;      /* blue underline */
+  width: 100%;                     /* hamesha underline dikhe */
+  background-color: #2196F3;       /* blue underline (active) */
 }
 nav ul li a.active {
-  color: #2196F3;                 /* active text bhi blue */
-  font-weight: bold;
+  color: #2196F3;                  /* active text bhi blue */
+  font-weight: bold;               /* extra highlight */
 }
 
-/* ===== Hero Section (example section) ===== */
+/* ===== Content section below navbar ===== */
 .hero {
-  margin-top: 70px;               /* navbar ke niche jagah */
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #555;
+  margin-top: 70px;                /* navbar ke neeche jagah banayi */
+  height: 80vh;                    /* screen height ka 80% */
+  display: flex;                   /* flexbox */
+  justify-content: center;         /* center horizontally */
+  align-items: center;             /* center vertically */
+  background-color: #555;          /* grey background */
 }
+
 .hero h1 {
-  font-size: 40px;
-  font-weight: bold;
-  color: #FFD700;
+  font-size: 40px;                 /* bada heading */
+  font-weight: bold;               /* bold */
+  color: #FFD700;                  /* golden text */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* halki shadow */
 }
