@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Indian Turest</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{color:white;}
+
+    /* Navbar */
+    nav{background:rgba(0,0,0,0.9);padding:15px 40px;
+      display:flex;justify-content:space-between;align-items:center;
+      position:fixed;top:0;left:0;width:100%;z-index:1000;}
+    nav .logo{font-size:24px;font-weight:bold;color:#ffcc00;}
+    nav ul{list-style:none;display:flex;}
+    nav ul li{margin-left:20px;}
+    nav ul li a{text-decoration:none;color:white;font-weight:600;transition:.3s;}
+    nav ul li a:hover{color:#ffcc00;}
+    body{padding-top:80px;background:#f6f6f6;color:#222;}
+
+    /* Hero */
+    .hero{background:url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
+      height:50vh;display:flex;align-items:center;justify-content:center;position:relative;}
+    .overlay{position:absolute;width:100%;height:50vh;top:0;left:0;background:rgba(0,0,0,0.6);}
+    .hero h1{position:relative;font-size:46px;color:#ffcc00;text-shadow:0 0 12px black;}
+
+    /* Contact Section */
+    .contact{padding:60px 20px;max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+    .info h2{margin-bottom:20px;color:#333;}
+    .info p{margin-bottom:10px;font-size:16px;}
+    .info span{color:#ff9900;font-weight:bold;}
+
+    form{background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+    form h2{margin-bottom:15px;color:#333;}
+    form input,form textarea{width:100%;padding:12px;margin-bottom:20px;border:1px solid #ccc;border-radius:6px;font-size:14px;}
+    form button{padding:14px 28px;border:none;border-radius:6px;background:#ffcc00;font-weight:bold;cursor:pointer;}
+    form button:hover{background:#ffaa00;}
+
+    iframe{width:100%;height:350px;border:none;border-radius:12px;margin-top:30px;}
+
+    footer{background:#111;color:#ccc;text-align:center;padding:20px;margin-top:40px;}
+    footer span{color:#ffcc00;font-weight:bold;}
+
+    @media (max-width:900px){
+      .contact{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">INDIAN TUREST</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="activities.html">Activities</a></li>
+      <li><a href="cruises.html">Cruises</a></li>
+      <li><a href="tailor-trips.html">Tailor Trips</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="overlay"></div>
+    <h1>Contact Us</h1>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact">
+    
+    <!-- Info -->
+    <div class="info">
+      <h2>Get in Touch</h2>
+      <p><span>📍 Address:</span> Connaught Place, New Delhi, India</p>
+      <p><span>📞 Phone:</span> +91 98765 43210</p>
+      <p><span>📧 Email:</span> support@indianturest.com</p>
+      <p><span>🕒 Hours:</span> Mon - Sat (9:00 AM - 8:00 PM)</p>
+    </div>
+
+    <!-- Form -->
+    <form>
+      <h2>Send us a Message</h2>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea rows="5" placeholder="Enter your message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Map -->
+  <div style="max-width:1100px;margin:auto;padding:0 20px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14015.730975988909!2d77.2089!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5e1cfd4e5f%3A0xa26f6cbe9e1f8f5a!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1618578161000!5m2!1sen!2sin"></iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2024 <span>Indian Turest</span> | Owned by <span>Kaju Roop / K.I</span>
+  </footer>
+</body>
+</html>
