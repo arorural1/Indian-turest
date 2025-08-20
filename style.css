@@ -1,106 +1,81 @@
-/* ===== Reset & Base ===== */
+/* ==================== Reset & Base (सारे default हटाना और global bg देना) ==================== */
+* { margin:0; padding:0; box-sizing:border-box; }
 html, body {
-  margin: 0;
-  padding: 0;
-  background: #000;        /* 🔥 पूरे site का background black */
-  color: #fff;             /* default text white */
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
+  background:#000;    /* 🔥 पूरा background काला */
+  color:#fff;         /* default text white */
+  font-family:'Poppins', sans-serif;
+  line-height:1.6;
 }
+body { padding-top:70px; }  /* navbar की height जितनी padding ताकि content नीचे से शुरू हो */
 
-body {
-  padding-top: 70px;       /* navbar की height जितनी padding */
-}
-
-/* ===== Navbar ===== */
+/* ==================== Navbar (ऊपर हमेशा fix) ==================== */
 nav {
-  background: #000;        /* Solid Black */
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background:#000;
+  padding:15px 40px;
+  display:flex; justify-content:space-between; align-items:center;
+  position:fixed; top:0; left:0; width:100%; z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.1);
 }
-
-nav .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffcc00;          /* Golden Logo */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin-left: 25px;
-}
-
+nav .logo { font-size:24px; font-weight:bold; color:#ffcc00; }
+nav ul { list-style:none; display:flex; }
+nav ul li { margin-left:25px; }
 nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  font-size: 15px;
-  transition: 0.3s;
+  text-decoration:none; color:#fff; font-weight:500; transition:.3s;
+  padding:6px 10px; border-radius:6px;
 }
+nav ul li a:hover, nav ul li a.active { color:#ffcc00; }
 
-/* Hover + Active */
-nav ul li a:hover {
-  color: #ffcc00;          /* Golden highlight */
-}
-nav ul li a.active {
-  color: #ffcc00;
-}
-
-/* ===== Hero Section ===== */
+/* ==================== Hero Section (Top banner image with text) ==================== */
 .hero {
-  text-align: center;
-  padding: 120px 20px;
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-              url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
+  text-align:center;
+  padding:140px 20px;
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+             url('https://source.unsplash.com/1600x600/?india,travel');
+  background-size:cover;
+  background-position:center;
 }
-.hero h1 {
-  font-size: 50px;
-  color: #ffcc00;
-  margin-bottom: 20px;
-}
-.hero p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 20px;
-}
+.hero h1 { color:#ffcc00; font-size:50px; margin-bottom:20px; }
+.hero p { max-width:700px; margin:auto; font-size:18px; }
 
-/* ===== Sections ===== */
-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-section h2 {
-  color: #ffcc00;
-  margin-bottom: 20px;
-}
+/* ==================== Section common style ==================== */
+section { padding:60px 20px; text-align:center; }
+section h2 { color:#ffcc00; margin-bottom:25px; font-size:32px; }
 
-/* ===== Footer ===== */
+/* ==================== Video Grid (Activity videos) ==================== */
+.video-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px; max-width:1200px; margin:auto;
+}
+.video-card video {
+  width:100%; height:200px; border-radius:10px; object-fit:cover;
+  transition:.3s;
+}
+.video-card:hover video { transform:scale(1.05); }
+
+/* ==================== Audio Guides ==================== */
+.audio-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px; max-width:900px; margin:auto;
+}
+.audio-card {
+  background:#111; padding:20px; border-radius:10px; text-align:center;
+}
+.audio-card h3 { margin-bottom:10px; color:#ffcc00; }
+.audio-card audio { width:100%; }
+
+/* ==================== Photo Gallery (Masonry style) ==================== */
+.gallery {
+  column-count:3; column-gap:15px; max-width:1100px; margin:auto;
+}
+.gallery img {
+  width:100%; margin-bottom:15px; border-radius:10px; transition:.3s;
+}
+.gallery img:hover { transform:scale(1.04); box-shadow:0 4px 15px rgba(0,0,0,.6); }
+@media(max-width:900px){ .gallery{ column-count:2; } }
+@media(max-width:600px){ .gallery{ column-count:1; } }
+
+/* ==================== Footer ==================== */
 footer {
-  background: #000;
-  color: #aaa;
-  padding: 20px;
-  text-align: center;
+  background:#000; color:#aaa; padding:20px; text-align:center; margin-top:40px;
 }
-footer span {
-  color: #ffcc00;
-  font-weight: bold;
-}
+footer span { color:#ffcc00; font-weight:bold; }
