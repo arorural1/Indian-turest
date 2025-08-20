@@ -2,6 +2,7 @@
 body, ul {
   margin: 0;   /* outer spacing remove */
   padding: 0;  /* inner spacing remove */
+  overflow-x: hidden;  /* Horizontal (left-right) scroll hata diya */
 }
 
 body {
