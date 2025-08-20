@@ -1,106 +1,43 @@
-/* ===== Reset & Base ===== */
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #000;        /* 🔥 पूरे site का background black */
-  color: #fff;             /* default text white */
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Turest - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-  padding-top: 70px;       /* navbar की height जितनी padding */
-}
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">INDIAN TUREST</div>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="activities.html">Activities</a></li>
+      <li><a href="cruises.html">Cruises</a></li>
+      <li><a href="tailor-trips.html">Tailor Trips</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-/* ===== Navbar ===== */
-nav {
-  background: #000;        /* Solid Black */
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Indian Turest</h1>
+    <p>Top Destinations, Cruises, Activities, and Tailor-made Trips — discover India in style</p>
+  </section>
 
-nav .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffcc00;          /* Golden Logo */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+  <!-- Sample Content -->
+  <section>
+    <h2>Why Choose Us?</h2>
+    <p>We provide premium travel packages with unforgettable experiences across India.</p>
+  </section>
 
-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
+  <!-- Footer -->
+  <footer>
+    © 2024 <span>Indian Turest</span> | Owned by <span>Kaju Roop (K.I.)</span>
+  </footer>
 
-nav ul li {
-  margin-left: 25px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  font-size: 15px;
-  transition: 0.3s;
-}
-
-/* Hover + Active */
-nav ul li a:hover {
-  color: #ffcc00;          /* Golden highlight */
-}
-nav ul li a.active {
-  color: #ffcc00;
-}
-
-/* ===== Hero Section ===== */
-.hero {
-  text-align: center;
-  padding: 120px 20px;
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-              url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-}
-.hero h1 {
-  font-size: 50px;
-  color: #ffcc00;
-  margin-bottom: 20px;
-}
-.hero p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 20px;
-}
-
-/* ===== Sections ===== */
-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-section h2 {
-  color: #ffcc00;
-  margin-bottom: 20px;
-}
-
-/* ===== Footer ===== */
-footer {
-  background: #000;
-  color: #aaa;
-  padding: 20px;
-  text-align: center;
-}
-footer span {
-  color: #ffcc00;
-  font-weight: bold;
-}
+</body>
+</html>
