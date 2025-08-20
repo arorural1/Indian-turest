@@ -1,62 +1,55 @@
-/* ================================
-   HERO / HEADER SECTION
-================================*/
+/* ✅ Navbar */
+nav { position:fixed; top:0; left:0; width:100%;
+  background:#fff; display:flex; justify-content:space-between; align-items:center;
+  padding:15px 40px; box-shadow:0 2px 8px rgba(0,0,0,0.15); z-index:1000;
+}
+.logo {font-size:24px; font-weight:700; color:#1976d2;}
+.nav-links {display:flex; list-style:none; gap:25px;}
+.nav-links li a {color:#333; text-decoration:none; font-weight:500;}
+.nav-links li a.active {color:#ff6f00;}
+
+/* ✅ Hero (Header common for all pages) */
 .hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-
-  /* 👇 Background photo – tum apna photo URL yahan dalna */
-  background: url("https://source.unsplash.com/1600x900/?travel,beach") no-repeat center/cover;
+  height: 60vh;
+  background-size:cover; background-position:center;
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; color:#fff;
 }
-
-/* 👇 Overlay taki photo bhi dikhe aur text bhi readable ho */
-.hero::after {
-  content:"";
+.hero-overlay {
   position:absolute; inset:0;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4));
+  background:rgba(0,0,0,0.5);
 }
+.hero-content {position:relative; z-index:2; padding:20px;}
+.hero-content h1 {font-size:48px; margin-bottom:15px;}
+.hero-content p {font-size:20px;}
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  max-width: 800px;
-  padding: 20px;
-}
-.hero-content h1 {
-  font-size: 52px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-.hero-content p {
-  font-size: 20px;
-  margin-bottom: 30px;
-}
+/* ✅ Page content */
+.page-content {padding:80px 30px; max-width:1000px; margin:auto; text-align:center;}
+.page-content h2{color:#1976d2; margin-bottom:15px;}
+.page-content p{color:#555; line-height:1.6;}
 
-/* ✅ Buttons */
-.btn-hero {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 25px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 30px;
-
-  /* colorful gradient buttons */
-  background: linear-gradient(135deg, #ff6f61, #ff9068);
-  color: white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
+/* ✅ Contact form styling */
+.contact-form {display:flex; flex-direction:column; gap:15px; max-width:600px; margin:auto;}
+.contact-form input, .contact-form textarea {
+  padding:12px; border:1px solid #ccc; border-radius:8px; font-family:inherit;
 }
-.btn-hero:hover {
-  transform: scale(1.05);
+.contact-form button {
+  background:#ff6f00; color:#fff; border:none; padding:12px;
+  border-radius:8px; cursor:pointer; font-weight:600;
 }
+.contact-form button:hover{background:#e65c00;}
 
-/* second button style */
-.btn-hero.second {
-  background: linear-gradient(135deg, #42a5f5, #478ed1);
+/* ✅ Footer */
+footer {
+  background:#222; color:#fff;
+  text-align:center; padding:25px; margin-top:50px;
+}
+footer a {color:#ff6f00; margin:0 10px; text-decoration:none;}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-content h1 {font-size:28px;}
+  nav {flex-wrap:wrap;}
+  .page-content {padding:40px 20px;}
 }
