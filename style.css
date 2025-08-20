@@ -3,27 +3,55 @@
 body {background:#111;color:#fff;line-height:1.6;}
 a{text-decoration:none;color:white;}
 
-/* ===== NAVBAR BASE ===== */
+/* Navbar */
 nav {
-  background: rgba(0,0,0,0.9);   /* dark glass background */
+  background: #000;              /* Solid Black Background */
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0; left: 0;
+  position: fixed;               /* हमेशा top पर */
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 nav .logo {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: bold;
-  color: #ffcc00;   /* golden highlight */
+  color: #ffcc00;                /* Golden Logo */
   text-transform: uppercase;
-  letter-spacing: 2px;
-  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;                  /* White Menu Text */
+  font-weight: 500;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+  color: #ffcc00;                /* Golden Highlight on Hover */
+}
+
+/* Active page highlight */
+nav ul li a.active {
+  color: #ffcc00;
 }
 /* Menu */
 nav ul {
