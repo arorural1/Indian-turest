@@ -6,7 +6,7 @@
   <title>Activities - Indian Turest</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body{color:white; background:#f5f5f5;}
+    body{background:#111;color:#fff;}
 
     /* Navbar */
     nav{
@@ -23,47 +23,54 @@
     body{padding-top:80px;}
 
     /* Hero */
-    .hero {
-      position: relative;
-      height: 60vh;
-      display:flex; align-items:center; justify-content:center;
-      text-align:center; overflow:hidden;
-      background:url('https://images.unsplash.com/photo-1508614999368-9260051291ea?auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
+    .hero{position:relative;height:100vh;overflow:hidden;text-align:center;}
+    .hero video{
+      position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;
     }
-    .overlay {position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);}
-    .hero h1{font-size:48px;color:#ffcc00;text-shadow:0 0 12px black;position:relative;z-index:2;}
+    .overlay{background:rgba(0,0,0,0.55);position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;}
+    .hero h1{font-size:58px;color:#ffcc00;margin-top:20vh;text-shadow:0 0 15px black;}
+    .hero p{font-size:22px;margin-top:15px;max-width:700px;margin:auto;}
 
-    /* Intro */
-    .intro{padding:40px 20px;text-align:center;color:#222;}
-    .intro h2{font-size:34px;margin-bottom:15px;}
-    .intro p{max-width:800px;margin:auto;font-size:18px;line-height:1.6;}
-
-    /* Activities Grid */
-    .activities{padding:60px 20px;text-align:center;}
-    .activities h2{font-size:36px;color:#333;margin-bottom:30px;}
-    .cards{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;max-width:1200px;margin:auto;
+    /* Video Gallery */
+    .activities-videos{padding:60px 20px;text-align:center;}
+    .activities-videos h2{font-size:36px;color:#ffcc00;margin-bottom:30px;}
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;max-width:1200px;margin:auto;
     }
-    .card{
-      background:#fff;color:#222;border-radius:12px;overflow:hidden;
-      box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:.3s;
-    }
-    .card:hover{transform:scale(1.05);}
-    .card img{width:100%;height:200px;object-fit:cover;}
-    .card h3{margin:12px;color:#ff9900;}
-    .card p{font-size:14px;margin:0 12px 16px;color:#444;}
+    .video-card{position:relative;border-radius:10px;overflow:hidden;}
+    .video-card video{width:100%;height:200px;object-fit:cover;border-radius:10px;transition:.4s;}
+    .video-card:hover video{transform:scale(1.05);}
 
-    /* Why Us */
-    .why{padding:60px 20px;text-align:center;background:#222;}
-    .why h2{font-size:34px;color:#ffcc00;margin-bottom:30px;}
+    /* Photo Collage (Masonry Style) */
+    .gallery{padding:60px 20px;text-align:center;background:#181818;}
+    .gallery h2{font-size:36px;color:#ffcc00;margin-bottom:30px;}
+    .masonry{
+      column-count:4;
+      column-gap:15px;
+      max-width:1200px;
+      margin:auto;
+    }
+    .masonry img{
+      width:100%;margin-bottom:15px;
+      border-radius:10px;
+      transition:.4s;
+    }
+    .masonry img:hover{transform:scale(1.03);box-shadow:0 4px 15px rgba(0,0,0,0.6);}
+    @media(max-width:900px){.masonry{column-count:2;}}
+    @media(max-width:600px){.masonry{column-count:1;}}
+
+    /* Why Choose */
+    .why{padding:60px 20px;text-align:center;}
+    .why h2{color:#ffcc00;font-size:34px;margin-bottom:30px;}
     .features{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;max-width:1000px;margin:auto;}
-    .feature{background:rgba(255,255,255,0.1);padding:25px;border-radius:10px;width:220px;text-align:center;}
+    .feature{background:#222;padding:25px;border-radius:10px;width:220px;text-align:center;}
     .feature h3{color:#ffcc00;margin-bottom:10px;}
 
     /* Footer */
-    footer{background:#111;color:#ccc;text-align:center;padding:20px;margin-top:40px;}
-    footer span{color:#ffcc00;font-weight:bold;}
+    footer{background:#000;color:#aaa;text-align:center;padding:20px;margin-top:40px;}
+    footer span{color:#ffcc00;}
   </style>
 </head>
 <body>
@@ -84,56 +91,55 @@
 
   <!-- Hero -->
   <div class="hero">
+    <video autoplay muted loop>
+      <source src="https://videos.pexels.com/video-files/856206/856206-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
     <div class="overlay"></div>
-    <h1>Adventures & Activities</h1>
+    <h1>Thrilling Activities in India</h1>
+    <p>From trekking in the Himalayas to diving in Andaman seas → experience 20+ adventures with us</p>
   </div>
 
-  <!-- Intro -->
-  <div class="intro">
-    <h2>Explore 20+ Incredible Activities</h2>
-    <p>
-      Whether you’re an adventure junkie or a cultural explorer, India offers endless activities:  
-      from <b>trekking in the Himalayas</b> to <b>skydiving in Mysore</b>, from <b>yoga retreats</b> to <b>wild safaris</b>.  
-      Pick your adventure & let’s make it happen ✨
-    </p>
-  </div>
+  <!-- Activities Video Grid -->
+  <section class="activities-videos">
+    <h2>20+ Adventure Activities (Videos)</h2>
+    <div class="video-grid">
+      <div class="video-card"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/2113566/2113566-hd_1920_1080_30fps.mp4"></video></div>
+      <div class="video-card"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/856193/856193-hd_1920_1080_25fps.mp4"></video></div>
+      <div class="video-card"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/857195/857195-hd_1920_1080_25fps.mp4"></video></div>
+      <div class="video-card"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/856181/856181-hd_1920_1080_30fps.mp4"></video></div>
+      <div class="video-card"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/1727084/1727084-hd_1920_1080_24fps.mp4"></video></div>
+      <div class="video-card"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/2823702/2823702-hd_1920_1080_30fps.mp4"></video></div>
+      <div class="video-card"><video autoplay muted loop><source src="https://videos.pexels.com/video-files/856193/856193-hd_1920_1080_25fps.mp4"></video></div>
+      <!-- इसी तरह 20 वीडियो डाल सकते हैं आपके activities के लिए -->
+    </div>
+  </section>
 
-  <!-- Activities Grid 20+ -->
-  <section class="activities">
-    <h2>Top Activities in India</h2>
-    <div class="cards">
-
-      <div class="card"><img src="https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?auto=format&fit=crop&w=800&q=60"><h3>Trekking</h3><p>Himalayan trails with professional guides.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1526481280692-3bfa7568e8f8?auto=format&fit=crop&w=800&q=60"><h3>River Rafting</h3><p>Thrill rides across Rishikesh & Manali rapids.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1477511801984-6a69dac36c44?auto=format&fit=crop&w=800&q=60"><h3>Paragliding</h3><p>Fly high in Solang valley & Bir Billing.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1508614999368-9260051291ea?auto=format&fit=crop&w=800&q=60"><h3>Skydiving</h3><p>Feel the rush in Mysore & Gujarat skydives.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=60"><h3>Desert Safari</h3><p>Ride camels & jeeps in Thar desert dunes.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1608613306797-e706e02a85cd?auto=format&fit=crop&w=800&q=60"><h3>Wildlife Safari</h3><p>Ranthambore & Jim Corbett tiger spotting.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1507525428034-1c3c2b8aa0f4?auto=format&fit=crop&w=800&q=60"><h3>Water Sports</h3><p>Scuba diving, surfing & jet ski fun in Goa.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=60"><h3>Bungee Jumping</h3><p>Leap of faith in Rishikesh adventure hubs.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1506898665112-f07fcbfc7314?auto=format&fit=crop&w=800&q=60"><h3>Hot Air Balloon</h3><p>Fly over Jaipur & Pushkar landscapes.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1516567727245-bfd5483af391?auto=format&fit=crop&w=800&q=60"><h3>Cycling Tours</h3><p>Scenic Kerala backwaters to Ladakh rides.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&w=800&q=60"><h3>Yoga Retreats</h3><p>Peace & wellness at Rishikesh & Kerala.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1551524612-27dc02a25440?auto=format&fit=crop&w=800&q=60"><h3>Skiing</h3><p>Ski on Kashmir & Himachal snowy peaks.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1496562910539-6abc1b1a57c6?auto=format&fit=crop&w=800&q=60"><h3>Cultural Tours</h3><p>Traditional dance, festivals & artisans.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1494783367193-149034c05e8f?auto=format&fit=crop&w=800&q=60"><h3>Camping</h3><p>Starry nights in forests & mountain camps.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1477512076069-d31eb021716f?auto=format&fit=crop&w=800&q=60"><h3>Rock Climbing</h3><p>Test your endurance on natural cliffs.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=60"><h3>Surfing</h3><p>Ride ocean waves in Goa & Andamans.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad1?auto=format&fit=crop&w=800&q=60"><h3>Temple Tours</h3><p>Spiritual pilgrimages across India.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format&fit=crop&w=800&q=60"><h3>Cruise Parties</h3><p>Luxury party cruises on Indian rivers.</p></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=800&q=60"><h3>Food Tours</h3><p>Spice trails & street food adventures.</p></div>
-
+  <!-- Photo Collage -->
+  <section class="gallery">
+    <h2>30+ Activity Moments (Photo Collage)</h2>
+    <div class="masonry">
+      <img src="https://images.unsplash.com/photo-1507525428034-1c3c2b8aa0f4?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1608613306797-e706e02a85cd?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1535469420028-cf3f0a1c9cf7?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1516567727245-bfd5483af391?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1543248939-ecbfbc6a1797?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1496562910539-6abc1b1a57c6?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1508614999368-9260051291ea?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=60">
+      <!-- और 30 images masonry collage layout में insert करें -->
     </div>
   </section>
 
   <!-- Why Choose Us -->
   <section class="why">
-    <h2>Why Choose Our Activities?</h2>
+    <h2>Why Book Our Activities?</h2>
     <div class="features">
-      <div class="feature"><h3>✅ Safety First</h3><p>Certified guides & safety equipment</p></div>
-      <div class="feature"><h3>⭐ Authentic</h3><p>Best local experiences guaranteed</p></div>
-      <div class="feature"><h3>💰 Affordable</h3><p>Luxury & budget-friendly options</p></div>
-      <div class="feature"><h3>🌍 Eco Friendly</h3><p>Responsible, sustainable tourism</p></div>
+      <div class="feature"><h3>⚡ Thrilling Choices</h3><p>20+ activities across India</p></div>
+      <div class="feature"><h3>✅ Safety</h3><p>Certified guides & equipment</p></div>
+      <div class="feature"><h3>💰 Value</h3><p>Budget to luxury options</p></div>
+      <div class="feature"><h3>🌏 Unique</h3><p>Handpicked experiences</p></div>
     </div>
   </section>
 
@@ -141,6 +147,5 @@
   <footer>
     © 2024 <span>Indian Turest</span> | Owned by <span>Kaju Roop / K.I</span>
   </footer>
-
 </body>
 </html>
