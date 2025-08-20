@@ -5,9 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cruises - Indian Turest</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
-   <body>
- <!-- Navbar -->
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{color:white;}
+
+    /* Navbar */
+    nav{
+      background: rgba(0,0,0,0.9);
+      color:#fff; padding:15px 40px;
+      display:flex; justify-content:space-between;align-items:center;
+      position:fixed; top:0; left:0; width:100%; z-index:1000;
+    }
+    nav .logo{font-size:24px;font-weight:bold;color:#ffcc00;}
+    nav ul{list-style:none;display:flex;}
+    nav ul li{margin-left:20px;}
+    nav ul li a{color:white;text-decoration:none;font-weight:600;transition:.3s;}
+    nav ul li a:hover{color:#ffcc00;}
+    body{padding-top:80px;}
+
+    /* Hero */
+    .hero{position:relative;height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+    .hero video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+    .hero .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:-1;}
+    .hero h1{font-size:52px;color:#ffcc00;text-shadow:0 0 15px black;}
+    .hero p{margin-top:15px;font-size:20px;}
+
+    /* Intro */
+    .intro{padding:50px 20px;text-align:center;background:#f8f9fa;color:#222;}
+    .intro h2{font-size:34px;color:#333;margin-bottom:15px;}
+    .intro p{max-width:800px;margin:auto;font-size:18px;line-height:1.6;}
+
+    /* Cruises Section */
+    .cruises{padding:60px 20px;text-align:center;background:#fff;color:#222;}
+    .cruises h2{font-size:36px;margin-bottom:30px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:1200px;margin:auto;}
+    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:.3s;}
+    .card:hover{transform:scale(1.04);}
+    .card img{width:100%;height:200px;object-fit:cover;}
+    .card h3{margin:12px;color:#ff9900;}
+    .card p{font-size:14px;margin:0 12px 16px;color:#444;}
+
+    /* Why Choose Us */
+    .why{padding:60px 20px;text-align:center;background:#222;}
+    .why h2{font-size:34px;color:#ffcc00;margin-bottom:30px;}
+    .features{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;max-width:1100px;margin:auto;}
+    .feature{background:rgba(255,255,255,0.1);padding:25px;border-radius:10px;width:250px;text-align:center;}
+    .feature h3{color:#ffcc00;margin:10px 0;}
+
+    /* Gallery */
+    .gallery{padding:60px 20px;background:#fafafa;color:#222;text-align:center;}
+    .gallery h2{margin-bottom:30px;}
+    .images{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;max-width:1100px;margin:auto;}
+    .images img{width:100%;border-radius:10px;transition:.4s;}
+    .images img:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(0,0,0,0.4);}
+
+    /* CTA */
+    .cta{margin:60px auto;padding:50px;max-width:800px;text-align:center;
+      border-radius:12px;background:linear-gradient(135deg,#ffcc00,#ff9900);
+      color:#222;box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+    .cta h2{margin-bottom:15px;}
+    .cta button{margin-top:15px;padding:14px 28px;border:none;border-radius:6px;font-size:16px;font-weight:bold;background:#222;color:#fff;cursor:pointer;}
+    .cta button:hover{background:#000;}
+
+    /* Footer */
+    footer{background:#111;color:#ccc;text-align:center;padding:20px;}
+    footer span{color:#ffcc00;font-weight:bold;}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
   <nav>
     <div class="logo">INDIAN TUREST</div>
     <ul>
@@ -21,165 +87,91 @@
     </ul>
   </nav>
 
-  <!-- Hero Section (Cruises) -->
+  <!-- Hero -->
   <div class="hero">
     <video autoplay muted loop>
       <source src="https://videos.pexels.com/video-files/856180/856180-hd_1920_1080_25fps.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
-    <div class="hero-content">
+    <div>
       <h1>Luxury Cruises in India</h1>
-      <p>Unforgettable journeys across seas, rivers & backwaters 🌊</p>
+      <p>Set sail into elegance, comfort & unmatched experiences 🌊</p>
     </div>
   </div>
 
-    /* Hero */
-    .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-    .hero video {
-      position: absolute; top:0; left:0;
-      width: 100%; height:100%; object-fit:cover;
-      z-index:-2;
-    }
-    .hero .overlay {
-      position:absolute; top:0; left:0; 
-      width:100%; height:100%;
-      background:rgba(0,0,0,0.6);
-      z-index:-1;
-    }
-    .hero-content h1 {
-      font-size:50px; color:#ffcc00;
-      text-shadow:0 0 12px black;
-      margin-bottom:15px;
-      animation: fadeDown 1.3s ease;
-    }
-    .hero-content p {
-      font-size:20px;
-      animation: fadeUp 1.3s ease;
-    }
+  <!-- Intro -->
+  <section class="intro">
+    <h2>Welcome Aboard</h2>
+    <p>
+      Discover the most enchanting waterways of India with <b>Indian Turest Cruises</b>. 
+      From golden sunsets in Goa to spiritual evenings on the Ganga, every voyage is crafted 
+      for ultimate relaxation & adventure.
+    </p>
+  </section>
 
-    /* Cruise Section */
-    .cruises {
-      padding:60px 20px;
-      text-align:center;
-      background: #f8f9fa;
-      color:#222;
-    }
-    .cruises h2 {
-      font-size:36px; 
-      color:#333; margin-bottom:30px;
-    }
-    .cards {
-      display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap:25px; max-width:1100px; margin:auto;
-    }
-    .card {
-      border-radius:10px;
-      overflow:hidden;
-      box-shadow:0 2px 10px rgba(0,0,0,0.3);
-      background:#fff;
-      transition:.4s;
-    }
-    .card:hover { transform:scale(1.05); }
-    .card img {
-      width:100%; height:200px; object-fit:cover;
-    }
-    .card h3 { color:#ff9900; margin:12px 0; }
-    .card p { font-size:14px; padding:0 10px 15px; color:#555; }
-
-    /* CTA */
-    .cta {
-      margin:60px auto;
-      padding:40px;
-      max-width:700px;
-      background:linear-gradient(135deg,#ffcc00,#ff9900);
-      border-radius:10px;
-      color:#222;
-      text-align:center;
-      box-shadow:0 3px 12px rgba(0,0,0,0.4);
-    }
-    .cta h2 {margin-bottom:15px;}
-    .cta button {
-      padding:14px 28px;
-      border:none;
-      border-radius:6px;
-      font-size:16px;
-      font-weight:bold;
-      background:#222;
-      color:#fff;
-      cursor:pointer;
-      transition:0.3s;
-    }
-    .cta button:hover {background:#000;}
-
-    /* Animation */
-    @keyframes fadeDown {from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
-    @keyframes fadeUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-
-    footer {
-      background:#111; color:#ccc; text-align:center; padding:15px;
-    }
-    footer span{color:#ffcc00; font-weight:bold;}
-  </style>
-</head>
-<body>
-
-  <!-- Hero Section -->
-  <div class="hero">
-    <video autoplay muted loop>
-      <source src="https://videos.pexels.com/video-files/856180/856180-hd_1920_1080_25fps.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Luxury Cruises in India</h1>
-      <p>Unforgettable journeys across seas, rivers & backwaters 🌊</p>
-    </div>
-  </div>
-
-  <!-- Cruises Cards -->
+  <!-- Cruise Packages -->
   <section class="cruises">
     <h2>Top Cruise Experiences</h2>
     <div class="cards">
-
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60" alt="Goa Cruise">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60">
         <h3>Goa Sunset Cruise</h3>
-        <p>Enjoy the golden sunset with music, dance, and vibes on Mandovi river.</p>
+        <p>Golden sunset, live music & Mandovi river vibes 🌅</p>
       </div>
-
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1507525428034-1c3c2b8aa0f4?auto=format&fit=crop&w=1200&q=60" alt="Kerala Houseboat">
+        <img src="https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?auto=format&fit=crop&w=1200&q=60">
         <h3>Kerala Backwaters</h3>
-        <p>Luxury houseboat sailing through palm-fringed water canals in Alleppey.</p>
+        <p>Houseboats & calm canals with palm-fringed beauty 🛶</p>
       </div>
-
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=60" alt="Ganga Cruise">
-        <h3>Heritage Ganga Cruise</h3>
-        <p>Blend of spirituality and luxury along the Ganges river in Varanasi.</p>
+        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=60">
+        <h3>Ganga Heritage Cruise</h3>
+        <p>Luxury with a divine journey along Varanasi’s ghats 🙏</p>
       </div>
-
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1551884801-115fc9c253ce?auto=format&fit=crop&w=1200&q=60" alt="Lakshadweep">
-        <h3>Lakshadweep Island Cruise</h3>
-        <p>Crystal clear water, white sandy beaches, and underwater adventures.</p>
+        <img src="https://images.unsplash.com/photo-1551884801-115fc9c253ce?auto=format&fit=crop&w=1200&q=60">
+        <h3>Lakshadweep Islands</h3>
+        <p>Dive into turquoise water, coral reefs & sandy beaches 🏖</p>
       </div>
-
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1477511801984-6a69dac36c44?auto=format&fit=crop&w=1200&q=60">
+        <h3>Brahmaputra River Cruise</h3>
+        <p>Wildlife, tribes & adventure along Assam’s mighty river 🐘</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?auto=format&fit=crop&w=1200&q=60">
+        <h3>Mumbai Luxury Sea Cruise</h3>
+        <p>Experience Arabian Sea with 5‑Star luxury suites 🛳</p>
+      </div>
     </div>
   </section>
 
-  <!-- Call to Action -->
+  <!-- Why Choose Us -->
+  <section class="why">
+    <h2>Why Sail With Us?</h2>
+    <div class="features">
+      <div class="feature"><h3>🛏 Luxury Cabins</h3><p>Spacious, private rooms with modern amenities.</p></div>
+      <div class="feature"><h3>🍽 World Cuisine</h3><p>Multi-cuisine dining with local & global flavors.</p></div>
+      <div class="feature"><h3>🎶 Entertainment</h3><p>Live music, dance & unforgettable evenings.</p></div>
+      <div class="feature"><h3>🌍 Guided Tours</h3><p>Explore Indian culture, heritage & natural wonders.</p></div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Luxury Cruise Gallery</h2>
+    <div class="images">
+      <img src="https://images.unsplash.com/photo-1507525428034-1c3c2b8aa0f4?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1551887374-94799b239111?auto=format&fit=crop&w=800&q=60">
+    </div>
+  </section>
+
+  <!-- CTA -->
   <div class="cta">
-    <h2>Plan Your Dream Cruise Today</h2>
-    <p>Sail on luxury cruises & explore India’s exotic destinations like never before.</p>
+    <h2>Plan Your Dream Cruise</h2>
+    <p>Reserve your luxury cruise journey today & enjoy personalized services with <b>Indian Turest</b>.</p>
     <button>Book My Cruise</button>
   </div>
 
