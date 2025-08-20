@@ -11,7 +11,7 @@ body {
 
 /* === NAVIGATION BAR (TOP HORIZONTAL) === */
 .navbar {
-  background-color: #000;          /* Navbar ka background black */
+  background-color: black;          /* Navbar ka background black */
   padding: 15px 40px;              /* Top-Bottom =15px, Left-Right=40px ka gap */
   display: flex;                   /* Flexbox use for layout (items ko row me laane ke liye) */
   justify-content: space-between;  /* Left side Logo aur Right side Menu ke beech space */
