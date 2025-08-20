@@ -1,79 +1,90 @@
-/* ===== RESET BASIC browser styles ===== */
+/* ===== Reset ===== */
 body, ul {
-  margin: 0;        /* browser ki default bahari spacing remove */
-  padding: 0;       /* browser ki default inner spacing remove */
+  margin: 0;
+  padding: 0;
 }
-
 body {
-  font-family: Arial, sans-serif; /* text ke liye font set */
-  background-color: #f4f4f4;      /* halka grey background */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
-/* ===== NAVBAR (top horizontal) ===== */
-.navbar {
-  width: 100%;                       /* full width navbar */
-  background-color: #000;             /* navbar ka background black */
-  display: flex;                      /* flexbox row display */
-  justify-content: space-between;     /* logo left aur menu right */
-  align-items: center;                /* vertical center alignment */
-  padding: 15px 40px;                 /* andar padding */
-  box-sizing: border-box;             /* padding ko total width me count kare */
-  position: fixed;                    /* navbar fix rahega */
-  top: 0;                             /* sabse upar chipak jaaye */
-  left: 0;                            /* left side se start kare */
-  z-index: 1000;                      /* upar rahega (scroll ke upar same dikhai de) */
+/* ===== Navbar ===== */
+nav {
+  width: 100%;
+  background-color: #000;          /* Black background */
+  display: flex;
+  justify-content: space-between;  /* Logo left, menu right */
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed;                 /* Fix navbar top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-/* ===== LOGO ===== */
+/* Logo */
 .logo {
-  font-size: 22px;       /* text size */
-  font-weight: bold;     /* bold */
-  color: #FFD700;        /* golden */
-  letter-spacing: 1px;   /* thoda gap letters me */
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFD700;       /* Golden */
+  letter-spacing: 1px;
 }
 .logo span {
-  color: #ffffff;        /* contrast white span */
+  color: #fff;
 }
 
-/* ===== MENU LINKS (right side) ===== */
+/* ===== Menu Links ===== */
 nav ul {
-  list-style: none;   /* bullet points remove */
-  display: flex;      /* row me links line up */
-  gap: 30px;          /* links ke beech ka gap */
+  list-style: none;
+  display: flex;       /* Links ek row me */
+  gap: 30px;           /* Gap between links */
 }
 
 nav ul li a {
-  text-decoration: none;  /* underline remove */
-  color: white;           /* text white */
-  font-size: 16px;        /* size normal */
-  transition: color 0.3s; /* hover effect smooth */
-  padding: 6px 8px;       /* thoda space clickable banane ke liye */
+  position: relative;              /* underline ke liye */
+  text-decoration: none;           
+  color: white;
+  font-size: 16px;
+  padding: 6px 0;
+  transition: color 0.3s;
 }
 
-/* Hover effect */
-nav ul li a:hover {
-  color: #FFD700;       /* hover pe golden */
+/* Hover underline (golden) */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;                   /* thoda neeche line */
+  width: 0%;                      /* hidden by default */
+  height: 2px;                    
+  background-color: #FFD700;      /* golden line */
+  transition: width 0.3s ease;
+}
+nav ul li a:hover::after {
+  width: 100%;                    /* hover par underline spread */
 }
 
-/* Active page link */
+/* ===== Active link (always underline in BLUE) ===== */
+nav ul li a.active::after {
+  width: 100%;                    /* line always visible */
+  background-color: #2196F3;      /* blue underline */
+}
 nav ul li a.active {
-  color: #FFD700;       /* golden hi rahe */
-  font-weight: bold;    /* thoda bold jisse current page dikhe */
-}
-
-/* === PAGE SECTION (bottom area, jaise About Us heading center) === */
-.page-section {
-  margin-top: 100px;         /* navbar ke niche space (warna overlap hoga) */
-  height: 80vh;              /* screen ke 80% height tak section */
-  display: flex;             /* flex layout */
-  justify-content: center;   /* content horizontally center */
-  align-items: center;       /* vertically center */
-  background-color: #555;    /* grey background */
-}
-
-.page-section h1 {
-  color: #FFD700;  /* heading golden */
-  font-size: 40px; /* bada text */
+  color: #2196F3;                 /* active text bhi blue */
   font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* ===== Hero Section (example section) ===== */
+.hero {
+  margin-top: 70px;               /* navbar ke niche jagah */
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #555;
+}
+.hero h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #FFD700;
 }
