@@ -12,7 +12,6 @@ body {
 
 /* ===== Navbar (Top bar) ===== */
 nav {
-  width: 100%;                       /* full width bar */
   background-color: #000;             /* black background */
   display: flex;                      /* flexbox row layout */
   justify-content: space-between;     /* logo left, menu right */
@@ -27,7 +26,7 @@ nav {
 }
 
 /* Small screen pe padding kam kar do */
-@media (max-width: 600px) {
+@media (max-width: 300px) {
   nav {
     padding: 15px 20px;  /* pehle 40px tha, ab 20px ho gaya */
   }
