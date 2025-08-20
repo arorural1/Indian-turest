@@ -3,91 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indian Tourist</title>
+  <title>Indian Tourism</title>
   <style>
+    /* --- Navbar style --- */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background-color: #f8f8f8;
-    }
-    header {
-      background: #ff9933;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
     }
     nav {
-      display: flex;
-      justify-content: center;
-      background: #333;
-    }
-    nav a {
+      background: #0066cc;
       color: white;
-      padding: 14px 20px;
+      padding: 10px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      position: relative;
+      margin-right: 20px;
+    }
+    nav ul li a {
+      color: white;
       text-decoration: none;
+      padding: 6px 10px;
+      display: block;
     }
-    nav a:hover {
-      background: #ff9933;
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background: #0099ff;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      top: 30px;
+      left: 0;
+      min-width: 150px;
     }
-    .container {
-      width: 80%;
-      margin: auto;
-      overflow: hidden;
-      padding: 20px;
+    nav ul li:hover ul {
+      display: block;
     }
-    .highlight {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
+    nav ul li ul li {
+      margin: 0;
+    }
+    nav ul li ul li a {
+      padding: 8px 12px;
+      color: white;
+    }
+
+    /* --- Page content --- */
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+    p {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    /* --- Gallery --- */
+    .gallery {
+      text-align: center;
+      margin: 20px;
+    }
+    .gallery img {
+      margin: 10px;
       border-radius: 10px;
     }
-    footer {
-      text-align: center;
+
+    /* --- Form --- */
+    .form-section {
+      margin: 20px;
       padding: 20px;
-      background: #333;
-      color: white;
+      background: #f2f2f2;
+      border-radius: 8px;
+      width: 300px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Indian Tourist</h1>
-    <p>Explore the Beauty and Culture of Incredible India</p>
-  </header>
-
+  <!-- Navigation Menu -->
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Destinations</a>
-    <a href="#">Travel Tips</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li>
+        <a href="#">Destinations ▼</a>
+        <ul>
+          <li><a href="#">Taj Mahal</a></li>
+          <li><a href="#">Kerala</a></li>
+          <li><a href="#">Jaipur</a></li>
+          <li><a href="#">Goa</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
   </nav>
 
-  <div class="container">
-    <section class="highlight">
-      <h2>Welcome to Indian Tourist</h2>
-      <p>Discover India’s ancient heritage, colorful festivals, stunning landscapes, and world-famous landmarks. From the Taj Mahal to the Himalayas, every journey here is unforgettable.</p>
-    </section>
+  <!-- Page title -->
+  <h1>Welcome to Incredible India</h1>
+  <p>Explore the beauty of Indian Tourism – monuments, culture, beaches and mountains.</p>
 
-    <section class="highlight">
-      <h2>Top Destinations</h2>
-      <ul>
-        <li>Taj Mahal – Agra</li>
-        <li>Jaipur – The Pink City</li>
-        <li>Backwaters of Kerala</li>
-        <li>Goa Beaches</li>
-        <li>Himalayan Adventure</li>
-      </ul>
-    </section>
+  <!-- Photo Gallery -->
+  <div class="gallery">
+    <h2>Photo Gallery</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Taj-Mahal.jpg" alt="Taj Mahal" width="300">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Backwaters_in_Kerala.jpg" alt="Kerala Backwaters" width="300">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Hawa_Mahal_in_Jaipur_2011.JPG" alt="Hawa Mahal Jaipur" width="300">
   </div>
 
-  <footer>
-    <p>&copy; 2024 Indian Tourist | Designed for travel lovers</p>
-  </footer>
+  <!-- Dropdown Form -->
+  <div class="form-section">
+    <h3>Choose Your Destination</h3>
+    <form>
+      <label for="places">Select a Place:</label><br>
+      <select id="places" name="places">
+        <option value="tajmahal">Taj Mahal</option>
+        <option value="kerala">Kerala Backwaters</option>
+        <option value="jaipur">Jaipur</option>
+        <option value="goa">Goa Beaches</option>
+        <option value="ladakh">Ladakh Mountains</option>
+      </select>
+      <br><br>
+      <input type="submit" value="Explore">
+    </form>
+  </div>
 
 </body>
 </html>
-
