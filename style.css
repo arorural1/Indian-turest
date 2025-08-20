@@ -1,7 +1,11 @@
-/* =============== BASIC BODY STYLING ================= */
+/* ===== DEFAULT RESET ===== */
+body, h1, ul {       /* body, h1 aur ul ke liye common rule */
+  margin: 0;         /* default outer spacing remove */
+  padding: 0;        /* default inner spacing remove */
+}
+
 body {
-  margin: 0;              /* Page ke kinare (white gap) hata do */
-  font-family: Arial, sans-serif; /* Text ka font set */
+  font-family: Arial, sans-serif; /* Sare text ka font */
 }
 
 /* =============== NAVBAR (Right Side Menu) ============ */
