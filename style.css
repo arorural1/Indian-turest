@@ -1,72 +1,79 @@
-/* === RESET BASIC BROWSER STYLES === */
-body, ul { 
-  margin: 0;          /* Browser ka default outer space (margin) hatao */
-  padding: 0;         /* Browser ka default inner space (padding) hatao */
+/* ===== RESET BASIC browser styles ===== */
+body, ul {
+  margin: 0;        /* browser ki default bahari spacing remove */
+  padding: 0;       /* browser ki default inner spacing remove */
 }
 
 body {
-  font-family: Arial, sans-serif; /* Puri website ka font set (Arial) */
-  background-color: #f9f9f9;      /* Page ka halka grey background */
+  font-family: Arial, sans-serif; /* text ke liye font set */
+  background-color: #f4f4f4;      /* halka grey background */
 }
 
-/* === NAVIGATION BAR (TOP HORIZONTAL) === */
+/* ===== NAVBAR (top horizontal) ===== */
 .navbar {
-  background-color: black;          /* Navbar ka background black */
-  padding: 15px 40px;              /* Top-Bottom =15px, Left-Right=40px ka gap */
-  display: flex;                   /* Flexbox use for layout (items ko row me laane ke liye) */
-  justify-content: space-between;  /* Left side Logo aur Right side Menu ke beech space */
-  align-items: center;             /* Vertically center align */
+  width: 100%;                       /* full width navbar */
+  background-color: #000;             /* navbar ka background black */
+  display: flex;                      /* flexbox row display */
+  justify-content: space-between;     /* logo left aur menu right */
+  align-items: center;                /* vertical center alignment */
+  padding: 15px 40px;                 /* andar padding */
+  box-sizing: border-box;             /* padding ko total width me count kare */
+  position: fixed;                    /* navbar fix rahega */
+  top: 0;                             /* sabse upar chipak jaaye */
+  left: 0;                            /* left side se start kare */
+  z-index: 1000;                      /* upar rahega (scroll ke upar same dikhai de) */
 }
 
-/* === LOGO === */
+/* ===== LOGO ===== */
 .logo {
-  font-size: 22px;       /* Size thoda bada */
-  font-weight: bold;     /* Bold text */
-  color: #FFD700;        /* Golden color */
-  letter-spacing: 1px;   /* Text ke letters ke beech thoda gap */
+  font-size: 22px;       /* text size */
+  font-weight: bold;     /* bold */
+  color: #FFD700;        /* golden */
+  letter-spacing: 1px;   /* thoda gap letters me */
 }
-
 .logo span {
-  color: #fff;           /* span ke andar ka text white color me */
+  color: #ffffff;        /* contrast white span */
 }
 
-/* === NAVBAR LINKS UL/LI STYLE === */
+/* ===== MENU LINKS (right side) ===== */
 nav ul {
-  list-style: none;  /* ul list ke bullet points remove */
-  display: flex;     /* links ek line (row) me aayenge */
-  gap: 25px;         /* har link ke beech 25px ka gap */
+  list-style: none;   /* bullet points remove */
+  display: flex;      /* row me links line up */
+  gap: 30px;          /* links ke beech ka gap */
 }
 
 nav ul li a {
-  text-decoration: underline; /* Underline hatana */
-  color: blue;          /* Link ka color white */
-  font-size: 16px;       /* Text size */
-  transition: color 0.3s; /* Hover effect smooth */
+  text-decoration: none;  /* underline remove */
+  color: white;           /* text white */
+  font-size: 16px;        /* size normal */
+  transition: color 0.3s; /* hover effect smooth */
+  padding: 6px 8px;       /* thoda space clickable banane ke liye */
 }
 
-/* === HOVER EFFECT === */
+/* Hover effect */
 nav ul li a:hover {
-  color: #FFD700;        /* Mouse le jaane par golden ho jayega */
+  color: #FFD700;       /* hover pe golden */
 }
 
-/* === ACTIVE PAGE LINK === */
+/* Active page link */
 nav ul li a.active {
-  color: #FFD700;        /* Current page hamesha golden dikhe */
-  font-weight: bold;     /* Thoda aur highlight (bold) */
+  color: #FFD700;       /* golden hi rahe */
+  font-weight: bold;    /* thoda bold jisse current page dikhe */
 }
 
-/* === PAGE HEADING / SECTION === */
+/* === PAGE SECTION (bottom area, jaise About Us heading center) === */
 .page-section {
-  background-color: #555; /* Grey background */
-  height: 90vh;           /* Page ka height screen ke 90% tak */
-  display: flex;          /* Flexbox center ke liye */
-  justify-content: center;/* Horizontal center */
-  align-items: center;    /* Vertical center */
+  margin-top: 100px;         /* navbar ke niche space (warna overlap hoga) */
+  height: 80vh;              /* screen ke 80% height tak section */
+  display: flex;             /* flex layout */
+  justify-content: center;   /* content horizontally center */
+  align-items: center;       /* vertically center */
+  background-color: #555;    /* grey background */
 }
 
 .page-section h1 {
-  color: #FFD700;          /* About Us heading golden me */
-  font-size: 40px;         /* Badi heading */
-  font-weight: bold;       /* Bold heading */
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* Shadow effect black */
+  color: #FFD700;  /* heading golden */
+  font-size: 40px; /* bada text */
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
