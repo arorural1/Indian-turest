@@ -22,8 +22,16 @@ nav {
   top: 0;                             /* screen ke bilkul top par */
   left: 0;                            /* screen ke left se start */
   z-index: 1000;                      /* sabke upar dikhe */
+  max-width: 100%;      /* 100% se jyada space use na ho */
+  overflow-x: hidden;   /* Agar andar wale element jyada bante hain toh cut kardo */
 }
 
+/* Small screen pe padding kam kar do */
+@media (max-width: 600px) {
+  nav {
+    padding: 15px 20px;  /* pehle 40px tha, ab 20px ho gaya */
+  }
+  
 /* ===== Logo ===== */
 .logo {
   font-size: 22px;        /* text size bara */
@@ -40,6 +48,8 @@ nav ul {
   list-style: none;        /* list bullets (•) remove karo */
   display: flex;           /* links ek line (row) me dikhe */
   gap: 30px;               /* links ke beech ka gap = 30px */
+  flex-wrap: wrap;     /* agar space kam ho toh menu niche line me aa jaye */
+    gap: 15px;           /* gap bhi chota ho gaya */
 }
 
 nav ul li a {
