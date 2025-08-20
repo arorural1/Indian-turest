@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Tourist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f8f8f8;
+    }
+    header {
+      background: #ff9933;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #ff9933;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+      padding: 20px;
+    }
+    .highlight {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Indian Tourist</h1>
+    <p>Explore the Beauty and Culture of Incredible India</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Destinations</a>
+    <a href="#">Travel Tips</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section class="highlight">
+      <h2>Welcome to Indian Tourist</h2>
+      <p>Discover India’s ancient heritage, colorful festivals, stunning landscapes, and world-famous landmarks. From the Taj Mahal to the Himalayas, every journey here is unforgettable.</p>
+    </section>
+
+    <section class="highlight">
+      <h2>Top Destinations</h2>
+      <ul>
+        <li>Taj Mahal – Agra</li>
+        <li>Jaipur – The Pink City</li>
+        <li>Backwaters of Kerala</li>
+        <li>Goa Beaches</li>
+        <li>Himalayan Adventure</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Indian Tourist | Designed for travel lovers</p>
+  </footer>
+
+</body>
+</html>
