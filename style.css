@@ -1,3 +1,14 @@
+/* Navbar fix hone par content cut na ho */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main, section, .hero, .about, .team, .cruises, .contact, .form-section {
+  padding-top: 100px;  /* navbar ki height ke hisaab se adjust karo (70-100px) */
+  box-sizing: border-box;
+}
+
 /* ============ NAVBAR ============ */
 nav {
   background: rgba(0,0,0,0.9);
