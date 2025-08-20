@@ -1,14 +1,76 @@
-/* ✅ Top Navbar same design */
-.navbar {
-  background: #000;  /* black */
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  right: 0;
-  top: 0;
-  z-index: 1000;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Right Side Navbar</title>
+  <style>
+    /* Body styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Right side vertical navbar */
+    .navbar {
+      position: fixed;        /* Scroll ke baad bhi chipki rahe */
+      top: 0;
+      right: 0;
+      width: 200px;           /* Navbar ka size */
+      height: 100vh;          /* Full screen height */
+      background-color: black;
+      display: flex;
+      flex-direction: column; /* Vertical direction */
+      align-items: flex-start;
+      overflow-y: auto;       /* Agar links zyada ho jayein to scroll aa jaye */
+    }
+
+    /* Navbar links */
+    .navbar a {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    /* Hover effect */
+    .navbar a:hover {
+      background-color: #333;
+    }
+
+    /* Page content styling */
+    .content {
+      margin-right: 220px; /* Right side navbar ki width ka gap */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Contact</a>
+    <a href="#">More</a>
+    <a href="#">Settings</a>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>Welcome!</h1>
+    <p>Yeh page ka main content hai.</p>
+    <p>Navbar right side me fixed hai aur kabhi cut nahi hoga.</p>
+    <p>Scroll karne par bhi navbar apni jagah pe rahega.</p>
+    <p>Lorem ipsum text... (yahan aap apna content daal sakte ho)</p>
+  </div>
+
+</body>
+</html>
 }
 .logo {
   font-size: 22px;
