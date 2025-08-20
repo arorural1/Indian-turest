@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailor Trips - Indian Turest</title>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body {color:white;}
+    
+    /* Background */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.65);
+      z-index: -1;
+    }
+    .hero-content {
+      max-width: 800px;
+      padding: 20px;
+    }
+    .hero-content h1 {
+      font-size: 48px;
+      color: #ffcc00;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+      margin-bottom: 15px;
+      animation: fadeInDown 1.2s ease;
+    }
+    .hero-content p {
+      font-size:18px;
+      margin-bottom:25px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    /* Form */
+    form {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+      text-align: left;
+    }
+    label {font-weight:bold;color:#ffcc00;}
+    select, input, textarea {
+      width:100%;padding:12px;margin:8px 0 18px;
+      border:none;border-radius:6px;
+      font-size:14px;
+    }
+    button {
+      width:100%;
+      background: #ffcc00;
+      color: black;
+      padding:14px;
+      border:none;
+      border-radius:6px;
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    button:hover {background:#e6b800;}
+
+    /* Steps Section */
+    .steps{
+      display:flex;
+      justify-content:space-around;
+      margin:60px auto;
+      max-width:1000px;
+      color:#333;
+    }
+    .step {
+      background:#fff;
+      color:#333;
+      border-radius:10px;
+      padding:20px;
+      width:22%;
+      box-shadow:0 2px 10px rgba(0,0,0,0.2);
+      text-align:center;
+    }
+    .step h2{color:#ff9900;}
+    
+    @keyframes fadeInDown {0%{opacity:0;transform:translateY(-30px);}100%{opacity:1;transform:translateY(0);}}
+    @keyframes fadeInUp {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <video autoplay muted loop>
+      <source src="https://videos.pexels.com/video-files/857195/857195-hd_1920_1080_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Plan Your Tailor-Made Trip</h1>
+      <p>Choose your preferences & let us create a personalized journey for you.</p>
+      
+      <!-- Form -->
+      <form>
+        <label for="destination">Destination</label>
+        <select id="destination">
+          <option>Kashmir</option>
+          <option>Goa</option>
+          <option>Kerala</option>
+          <option>Rajasthan</option>
+          <option>Ladakh</option>
+        </select>
+
+        <label for="trip">Kind of Trip</label>
+        <select id="trip">
+          <option>Adventure</option>
+          <option>Family</option>
+          <option>Honeymoon</option>
+          <option>Spiritual</option>
+          <option>Cultural</option>
+        </select>
+
+        <label for="themes">Activities & Themes</label>
+        <select id="themes">
+          <option>Trekking</option>
+          <option>Beaches</option>
+          <option>Wildlife Safari</option>
+          <option>Heritage Tour</option>
+          <option>Luxury Cruise</option>
+        </select>
+
+        <label for="days">Number of Days</label>
+        <input type="number" id="days" placeholder="5">
+
+        <label for="budget">Average Budget (₹)</label>
+        <input type="text" id="budget" placeholder="Ex: 50,000">
+
+        <button type="submit">Submit Request</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Steps Section -->
+  <section class="steps">
+    <div class="step">
+      <h2>1</h2>
+      <p>Select Destination</p>
+    </div>
+    <div class="step">
+      <h2>2</h2>
+      <p>Choose Activities</p>
+    </div>
+    <div class="step">
+      <h2>3</h2>
+      <p>Customize Package</p>
+    </div>
+    <div class="step">
+      <h2>4</h2>
+      <p>Book & Enjoy</p>
+    </div>
+  </section>
+
+</body>
+</html>
