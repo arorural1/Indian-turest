@@ -5,144 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Destinations - Indian Turest</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      color: white;
-      position: relative;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* Background Video */
-    #bg-video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    /* Dark overlay so text visible */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: -1;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{color:white; background:#f5f5f5;}
 
     /* Navbar */
-    nav {
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    nav{
+      background:rgba(0,0,0,0.9);
+      padding:15px 40px;
+      display:flex;justify-content:space-between;align-items:center;
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
     }
-    nav .logo {
-      font-size: 22px;
-      font-weight: bold;
-      color: #ffcc00;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li {
-      margin-left: 20px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-    nav ul li a:hover {
-      color: #ffcc00;
-    }
+    nav .logo{font-size:24px;font-weight:bold;color:#ffcc00;}
+    nav ul{list-style:none;display:flex;}
+    nav ul li{margin-left:20px;}
+    nav ul li a{text-decoration:none;color:white;font-weight:600;transition:.3s;}
+    nav ul li a:hover{color:#ffcc00;}
+    body{padding-top:80px;}
 
-    /* Page Content */
-    .destinations {
-      padding: 60px 30px;
-      text-align: center;
+    /* Hero */
+    .hero {
+      position:relative;
+      height:60vh;
+      display:flex; align-items:center; justify-content:center;
+      background:url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
+      text-align:center;
     }
-    .destinations h1 {
-      font-size: 36px;
-      margin-bottom: 30px;
-      color: #ffcc00;
-      text-shadow: 2px 2px 8px black;
-    }
+    .hero h1{font-size:48px;color:#ffcc00;text-shadow:0 0 12px black;}
 
-    /* Cards Grid */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.7);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .card h2 {
-      margin: 10px;
-      font-size: 20px;
-      color: #ffcc00;
-    }
-    .card p {
-      margin: 0 10px 15px;
-      font-size: 14px;
-      color: #f1f1f1;
-    }
+    /* Intro */
+    .intro{padding:40px 20px;text-align:center;color:#222;}
+    .intro h2{font-size:34px;margin-bottom:15px;}
+    .intro p{max-width:800px;margin:auto;font-size:18px;line-height:1.6;}
+
+    /* Grid Section */
+    .destinations{padding:60px 20px;text-align:center;}
+    .destinations h2{font-size:36px;color:#333;margin-bottom:30px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;max-width:1100px;margin:auto;}
+    .card{background:#fff;color:#222;border-radius:12px;overflow:hidden;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:.3s;}
+    .card:hover{transform:scale(1.05);}
+    .card img{width:100%;height:200px;object-fit:cover;}
+    .card h3{margin:12px;color:#ff9900;}
+    .card p{font-size:14px;margin:0 12px 16px;color:#444;}
+
+    /* Categories */
+    .categories{padding:60px 20px;text-align:center;background:#fafafa;color:#222;}
+    .categories h2{font-size:34px;margin-bottom:30px;}
+    .cat-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;max-width:1000px;margin:auto;}
+    .cat{background:#fff;padding:25px;width:220px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+    .cat h3{color:#ff9900;}
+
+    /* Why Us */
+    .why{padding:60px 20px;text-align:center;background:#222;}
+    .why h2{font-size:34px;color:#ffcc00;margin-bottom:30px;}
+    .features{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;max-width:1000px;margin:auto;}
+    .feature{background:rgba(255,255,255,0.1);padding:25px;border-radius:10px;width:220px;text-align:center;}
+    .feature h3{color:#ffcc00;margin-bottom:10px;}
 
     /* Footer */
-    footer {
-      background: rgba(0,0,0,0.7);
-      color: #ccc;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-    footer span {
-      color: #ffcc00;
-      font-weight: bold;
-    }
+    footer{background:#111;color:#ccc;text-align:center;padding:20px;margin-top:40px;}
+    footer span{color:#ffcc00;font-weight:bold;}
   </style>
 </head>
 <body>
-  <!-- Background Video -->
-  <video autoplay muted loop id="bg-video">
-    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="overlay"></div>
 
   <!-- Navbar -->
-<nav>
+  <nav>
     <div class="logo">INDIAN TUREST</div>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -154,40 +83,58 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <!-- Page Content -->
-  <div class="destinations">
-    <h1>Top Destinations in India</h1>
 
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Explore Incredible Destinations</h1>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    <h2>Discover India's Best Places</h2>
+    <p>
+      India offers a mosaic of beauty – snow-capped mountains, golden deserts, serene beaches and cultural cities.  
+      Explore curated destinations for couples, families, adventurers and spiritual seekers ✨
+    </p>
+  </div>
+
+  <!-- Destinations Grid -->
+  <section class="destinations">
+    <h2>Popular Destinations</h2>
     <div class="cards">
-  <!-- Taj Mahal -->
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg" alt="Taj Mahal">
-    <h2>Taj Mahal, Agra</h2>
-    <p>One of the Seven Wonders of the World, symbol of love, built by Mughal Emperor Shah Jahan.</p>
-  </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1604275680033-9f147a2d7bf5?auto=format&fit=crop&w=800&q=60"><h3>Taj Mahal, Agra</h3><p>World wonder & symbol of love.</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1543248939-ecbfbc6a1797?auto=format&fit=crop&w=1000&q=60"><h3>Jaipur, Rajasthan</h3><p>Forts, palaces & grand heritage.</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=60"><h3>Kashmir</h3><p>Romantic paradise, snow peaks & valleys.</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1588596682631-15249c76206e?auto=format&fit=crop&w=1000&q=60"><h3>Goa Beaches</h3><p>Golden sands, nightlife & water fun.</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=60"><h3>Kerala Backwaters</h3><p>Luxury houseboats & scenic canals.</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1551887374-94799b239111?auto=format&fit=crop&w=1000&q=60"><h3>Ladakh</h3><p>Adventure land with lakes & monasteries.</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1000&q=60"><h3>Varanasi</h3><p>Spiritual ghats & Ganga aarti divine feels.</p></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1553449945-44e92b7e0c43?auto=format&fit=crop&w=1000&q=60"><h3>Andaman Islands</h3><p>Crystal clear waters & scuba diving.</p></div>
+    </div>
+  </section>
 
-  <!-- Kashmir -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1506023915073-7a3c1f49f4ff?auto=format&fit=crop&w=800&q=60" alt="Kashmir">
-    <h2>Kashmir Valley</h2>
-    <p>Known as 'Paradise on Earth', famous for mountains, lakes, gardens and snow.</p>
-  </div>
+  <!-- Categories -->
+  <section class="categories">
+    <h2>Travel Categories</h2>
+    <div class="cat-cards">
+      <div class="cat"><h3>❤️ Romantic</h3><p>Couples gateways like Kashmir, Goa & Kerala.</p></div>
+      <div class="cat"><h3>🧭 Adventure</h3><p>Ladakh, trekking, rafting, safaris.</p></div>
+      <div class="cat"><h3>👨‍👩‍👧 Family</h3><p>Rajasthan palaces, Kerala, Jaipur.</p></div>
+      <div class="cat"><h3>🙏 Spiritual</h3><p>Varanasi, Rishikesh, Golden Temple.</p></div>
+      <div class="cat"><h3>🏛 Heritage</h3><p>Agra, Jaipur, Udaipur, Khajuraho.</p></div>
+    </div>
+  </section>
 
-  <!-- Kerala -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="Kerala">
-    <h2>Kerala Backwaters</h2>
-    <p>Beautiful lakes and canals, popular for houseboat cruises and lush greenery.</p>
-  </div>
-
-  <!-- Goa -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="Goa">
-    <h2>Goa Beaches</h2>
-    <p>Golden beaches, Portuguese architecture, vibrant nightlife and water sports.</p>
-  </div>
-</div>
-
+  <!-- Why Us -->
+  <section class="why">
+    <h2>Why Book Our Destinations?</h2>
+    <div class="features">
+      <div class="feature"><h3>✈ Custom Packages</h3><p>Trips made to your taste.</p></div>
+      <div class="feature"><h3>🛏 Comfort Stays</h3><p>Luxury hotels & resorts.</p></div>
+      <div class="feature"><h3>✨ Authentic</h3><p>Local guides & experiences.</p></div>
+      <div class="feature"><h3>💰 Affordable</h3><p>Best prices with premium quality.</p></div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
