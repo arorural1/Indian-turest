@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indian Turest - Explore Himachal</title>
+  <title>Indian Turest - Explore India</title>
   <style>
     body, html {
       margin: 0;
@@ -12,12 +12,19 @@
       height: 100%;
     }
 
-    /* Full Page Background */
+    /* Hero Section with Background Slider */
     .hero {
-      background: url('https://upload.wikimedia.org/wikipedia/commons/e/e7/Manali_Lake.jpg') no-repeat center center/cover;
       height: 100vh;
       position: relative;
       color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
     }
 
     /* Navbar */
@@ -29,7 +36,7 @@
       display: flex;
       justify-content: space-between;
       padding: 20px 50px;
-      background: rgba(0,0,0,0.4); /* Transparent Background */
+      background: rgba(0,0,0,0.4);
     }
     nav .logo {
       font-size: 26px;
@@ -56,15 +63,7 @@
       color: #ffcc00;
     }
 
-    /* Center Heading */
-    .hero-content {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+    /* Center Content */
     .hero-content h2 {
       font-size: 40px;
       font-style: italic;
@@ -87,7 +86,7 @@
       background: white;
       border-radius: 5px;
       padding: 15px;
-      margin-top: 40px;
+      margin-top: 30px;
       width: 80%;
       max-width: 800px;
     }
@@ -113,19 +112,33 @@
     .search-bar button:hover {
       background: #004d26;
     }
+
+    /* Owner Section */
+    .owner {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      position: relative;
+    }
+    .owner span {
+      color: #ffcc00;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
   <!-- Hero Section -->
-  <div class="hero">
+  <div class="hero" id="hero">
     <!-- Navbar -->
     <nav>
       <div class="logo">INDIAN TUREST</div>
       <ul>
         <li><a href="#">Destination</a></li>
         <li><a href="#">Activities</a></li>
-        <li><a href="#">Tailor-Made Trips</a></li>
+        <li><a href="#">Tailor Trips</a></li>
         <li><a href="#">Cruises</a></li>
         <li><a href="#">About Us</a></li>
       </ul>
@@ -134,7 +147,7 @@
     <!-- Center Content -->
     <div class="hero-content">
       <h2>Explore Beautiful</h2>
-      <h1>HIMACHAL</h1>
+      <h1>INCREDIBLE INDIA</h1>
 
       <!-- Search Filters -->
       <div class="search-bar">
@@ -143,6 +156,7 @@
           <option>Taj Mahal</option>
           <option>Kashmir</option>
           <option>Kerala</option>
+          <option>Jaipur</option>
         </select>
         <select>
           <option>Kind of Trip</option>
@@ -162,5 +176,37 @@
     </div>
   </div>
 
+  <!-- Owner Footer -->
+  <div class="owner">
+    © 2024 <span>Indian Turest</span>. All Rights Reserved. <br>
+    Website Owned By: <span>Kaju Roop / K.I</span>
+  </div>
+
+  <!-- JavaScript for Background Slider -->
+  <script>
+    const hero = document.getElementById("hero");
+
+    // Array of background images
+    const images = [
+      "https://upload.wikimedia.org/wikipedia/commons/b/bb/Taj-Mahal.jpg",   // Taj Mahal
+      "https://upload.wikimedia.org/wikipedia/commons/6/65/Backwaters_in_Kerala.jpg", // Kerala
+      "https://upload.wikimedia.org/wikipedia/commons/3/35/Kashmir_valley.jpg", // Kashmir
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/Hawa_Mahal_in_Jaipur_2011.JPG", // Jaipur
+      "https://upload.wikimedia.org/wikipedia/commons/f/f2/Goa_Beach.jpg" // Goa
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+      hero.style.backgroundImage = `url(${images[index]})`;
+      index = (index + 1) % images.length; // Loop
+    }
+
+    // Change background every 5 seconds
+    setInterval(changeBackground, 5000);
+
+    // Set first image on load
+    changeBackground();
+  </script>
 </body>
 </html>
