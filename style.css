@@ -118,3 +118,74 @@ nav ul li a.active::after {
   color: #FFD700;                   /* Golden text */
   text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* Soft shadow */
 }
+
+/* ===================================
+   HERO PHOTO SECTION (Banner)
+=================================== */
+.hero-photo {
+  width: 100vw;                           /* 📌 Full width of screen (viewport width) */
+  height: 100vh;                          /* 📌 Full height of screen (viewport height) */
+  background: url("images/hero.jpg")      /* 📌 Apna photo insert karo yahan */
+              no-repeat center center/cover; 
+  /* no-repeat = ek hi photo, repeat nahi hogi
+     center center = centre me set karega
+     cover = puri screen bharega, bina distorting */
+  
+  display: flex;                          /* 📌 Flexbox for center alignment */
+  justify-content: center;                /* 📌 Horizontal center */
+  align-items: center;                    /* 📌 Vertical center */
+  position: relative;                     /* 📌 for overlay positioning */
+  margin: 0;                              /* 📌 remove outer spacing */
+  padding: 0;
+  overflow: hidden;                       /* 📌 avoid scroll issues */
+}
+
+/* ===================================
+   Overlay (dark transparent layer)
+=================================== */
+.hero-photo::after {
+  content: "";                            /* 📌 empty pseudo element */
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.45);           /* 📌 Black transparent overlay for readability */
+  z-index: 1;                             /* 📌 sit above image but below content */
+}
+
+/* ===================================
+   Content Inside Hero Section
+=================================== */
+.hero-content {
+  position: relative;                     /* 📌 stays above overlay */
+  z-index: 2;                             /* 📌 ensures text visible above overlay */
+  text-align: center;                     /* 📌 center align text */
+  color: #ffffff;                         /* 📌 white text for contrast */
+  padding: 0 20px;                        /* 📌 padding so text not stick on mobile edges */
+}
+
+.hero-content h1 {
+  font-size: 60px;                        /* 📌 Large heading */
+  font-weight: 800;                       /* 📌 bold */
+  text-transform: uppercase;              /* 📌 ALL CAPS */
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7); /* 📌 shadow for clarity */
+  margin-bottom: 15px;                    /* 📌 gap below heading */
+}
+
+.hero-content p {
+  font-size: 22px;                        /* 📌 smaller than heading */
+  font-weight: 400;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6); /* 📌 shadow for readability */
+}
+
+/* ===================================
+   Responsive Adjustments
+=================================== */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 38px; }   /* 📌 Smaller heading for tablets */
+  .hero-content p { font-size: 16px; }    /* 📌 Adjusted paragraph */
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 28px; }   /* 📌 Smallest heading for mobile */
+  .hero-content p { font-size: 14px; }    /* 📌 Smaller paragraph */
+}
